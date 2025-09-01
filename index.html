@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Expense Tracker</h1>
+      <div class="expense-tracker">
+        <form class="expense-form" id="expense-form-id">
+          <input
+            type="text"
+            name="Name"
+            placeholder="Expense Name"
+            id="expense-name"
+          />
+          <br />
+          <br />
+          <input
+            type="number"
+            name="Amount"
+            min="0"
+            placeholder="Expense Amount"
+            id="expense-amount"
+          />
+          <br />
+          <br />
+          <input type="date" name="Date" placeholder="Date" id="expense-date" />
+          <br />
+          <br />
+          <input type="submit" value="Submit" class="expense-submission" />
+          <br />
+        </form>
+        <div class="expense-table">
+          <h2>Expense Summary</h2>
+          <table id="expense-summary">
+            <thead>
+              <tr>
+                <th>Expense Name</th>
+                <th>Expense Amount</th>
+                <th>Expense Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

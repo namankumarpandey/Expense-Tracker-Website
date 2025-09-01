@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  text-align: center;
+}
+.table-class {
+  text-align: center;
+}
+/* expense form */
+.expense-form {
+  border: 1px solid black;
+  padding: 1.5em 2em;
+  width: 450px;
+  height: 200px;
+  margin: 0 auto;
+}
+.expense-name,
+.expense-amount,
+.expense-date,
+.expense-submission {
+  margin: 0;
+  padding: 10px;
+}
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-radius: 1px;
+  width: 5em;
+  height: 3em;
+  margin: 0 auto;
+}
+th {
+  border: 1px solid black;
+  width: 5em;
+  height: 3em;
+}
+td {
+  border: 1px solid black;
+  width: 5em;
+  height: 3em;
+}
