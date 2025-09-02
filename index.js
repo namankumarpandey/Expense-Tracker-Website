@@ -1,5 +1,9 @@
 const expenseForm = document.getElementById("expense-form-id");
-let expenses = [];
+let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+window.onload = function () {
+  renderTable();
+};
 
 expenseForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -18,9 +22,9 @@ expenseForm.addEventListener("submit", function (e) {
     amount: amount,
     date: date,
   };
-
   expenses.push(newObj);
-  console.log("object", expenses);
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+  console.log("Array of objects", expenses);
   expenseForm.reset();
 
   renderTable();
@@ -28,10 +32,11 @@ expenseForm.addEventListener("submit", function (e) {
 
 function renderTable() {
   let tableBody = document.getElementById("table-body");
-
   tableBody.innerHTML = "";
+
+  expenses = JSON.parse(localStorage.getItem("expenses")) || [];
   expenses.forEach((item, index) => {
-    console.log("Item", item, index);
+    console.log("Item is: ", item, index);
     let row = document.createElement("tr");
     row.innerHTML = `
     <td>${item.name}</td>
@@ -44,8 +49,6 @@ function renderTable() {
 
 function deleteRow(index) {
   expenses.splice(index, 1);
-  // Splice ,slice, unshift,shift ,reduce,map,forEach,for in
+  localStorage.setItem("expenses", JSON.stringify(expenses));
   renderTable();
 }
-
-// add delete functionality
