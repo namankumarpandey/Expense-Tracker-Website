@@ -49,6 +49,7 @@ function renderTable() {
 
 function deleteRow(index) {
   expenses.splice(index, 1);
+  console.log(expenses);
   localStorage.setItem("expenses", JSON.stringify(expenses));
   renderTable();
 }
